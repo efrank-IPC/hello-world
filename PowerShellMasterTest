@@ -15,3 +15,5 @@ Set-MsolUser -UserPrincipalName $UPN -UsageLocation US
 
 #Assign E3 and EMS licenses to user
 Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses "apterainc:ENTERPRISEPACK","apterainc:EMS"
+
+#testing new line
