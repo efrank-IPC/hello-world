@@ -1,3 +1,1 @@
-# hello-world
-Testing/Training repository
-Testing commits 
+This is an example readme for a PS script. 
