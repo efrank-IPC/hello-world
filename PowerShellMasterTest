@@ -1,0 +1,17 @@
+#Capture administrative credential for future connections.
+$credential = get-credential
+
+#Imports the installed Azure Active Directory module.
+Import-Module MSOnline
+
+#Establishes Online Services connection to Office 365 Management Layer.
+Connect-MsolService -Credential $credential
+
+$UPN = Read-Host -Prompt "Enter user's User Principal Name"
+
+Get-MsolUser -UserPrincipalName $UPN 
+ 
+Set-MsolUser -UserPrincipalName $UPN -UsageLocation US
+
+#Assign E3 and EMS licenses to user
+Set-MsolUserLicense -UserPrincipalName $upn -AddLicenses "apterainc:ENTERPRISEPACK","apterainc:EMS"
